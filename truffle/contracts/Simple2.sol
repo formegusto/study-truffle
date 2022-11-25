@@ -2,7 +2,7 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Simple2 {
-    event Receive(address from, uint256 amount);
+    event Receive(address indexed from, uint256 amount);
     event ReturnNumber(string description);
 
     receive() external payable {
