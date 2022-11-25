@@ -4,7 +4,7 @@ const BN = web3.utils.BN;
 chai.use(require("chai-bn")(BN));
 const { expect } = chai;
 
-contract.only("Test2", (account) => {
+contract("Test2", (account) => {
   it.only("Should not have zero address", async () => {
     const simpleInstance = await Simple.deployed();
     await expect(simpleInstance.address).to.not.equal(0x0);

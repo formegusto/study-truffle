@@ -2,11 +2,14 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Simple2 {
-    function return7() public pure returns (uint256) {
-        return 7;
+    event Receive(address from, uint256 amount);
+    event ReturnNumber(string description);
+
+    receive() external payable {
+        emit Receive(msg.sender, msg.value);
     }
 
-    function returnParameter(uint256 _num) public pure returns (uint256) {
-        return _num;
+    function return99() public {
+        emit ReturnNumber("This is return 99");
     }
 }
